@@ -1,0 +1,30 @@
+{
+  "name": "csv-loader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Manage csv file for machine learning purposes",
+  "scripts": {
+    "start": "tsc && node build/index.js",
+    "watch-and-run": "ts-node-dev --respawn -- src/index.ts"
+  },
+  "keywords": [
+    "machine",
+    "learning",
+    "csv",
+    "load",
+    "read"
+  ],
+  "author": "Enrico Zanardo",
+  "devDependencies": {
+    "@types/lodash": "^4.14.151",
+    "@types/node": "^14.0.1",
+    "@types/shuffle-seed": "^1.1.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.9.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "shuffle-seed": "^1.1.6"
+  }
+}
