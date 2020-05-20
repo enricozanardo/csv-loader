@@ -29,7 +29,7 @@ export class CSVManager {
   constructor(public filename: string, public options: Options) {}
 
   public loadCSV() {
-    const PATH_CSV = `${__dirname}/csv`;
+    const PATH_CSV = `${__dirname}`;
 
     let loadedData = fs.readFileSync(`${PATH_CSV}/${this.filename}`, {
       encoding: 'utf-8',

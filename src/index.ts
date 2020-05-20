@@ -1,5 +1,6 @@
 import { CSVManager, Options, DataSet, DataModel, Value } from './CSVManager';
 
+// Converters
 function sqFoots2sqMetres(sqrareFoot: Value): number {
   if (typeof sqrareFoot !== 'number') {
     sqrareFoot = parseFloat(sqrareFoot.replace('"', ''));
@@ -8,6 +9,7 @@ function sqFoots2sqMetres(sqrareFoot: Value): number {
   return squareMeters;
 }
 
+// Options
 const options: Options = {
   dataColumns: ['lat', 'long', 'sqft_living'],
   labelColumns: ['price'],
@@ -20,6 +22,7 @@ const options: Options = {
   splitTest: 0.1,
 };
 
-const csvManager = new CSVManager('example.csv', options);
+// Data Management
+const csvManager = new CSVManager('./csv/example.csv', options);
 const dataSet = csvManager.loadCSV();
-console.log(dataSet.testLabels);
+// console.log(dataSet.testLabels);
