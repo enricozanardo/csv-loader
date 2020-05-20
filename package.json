@@ -1,9 +1,10 @@
 {
-  "name": "csv-loader",
+  "name": "@enrynewton/csv-loader",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "license": "MIT",
-  "description": "Manage csv file for machine learning purposes",
+  "description": "Load and manage csv file for machine learning purposes",
   "scripts": {
     "start": "tsc && node build/index.js",
     "watch-and-run": "ts-node-dev --respawn -- src/index.ts"

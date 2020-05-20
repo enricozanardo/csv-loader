@@ -1,3 +1,10 @@
+# CSV Loader
+
+This package allow to manage the content of the csv files that are then used for machine learning purposes later on.
+
+Example:
+
+```ts
 import { CSVManager, Options, DataSet, DataModel, Value } from './CSVManager';
 
 // Converters
@@ -25,4 +32,5 @@ const options: Options = {
 // Data Management
 const csvManager = new CSVManager('../csv/example.csv', options);
 const dataSet = csvManager.loadCSV();
-// console.log(dataSet.testLabels);
+console.log(dataSet.testLabels);
+```

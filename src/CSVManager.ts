@@ -1,5 +1,4 @@
 import fs from 'fs';
-import os from 'os';
 import _ from 'lodash';
 import shuffleSeed from 'shuffle-seed';
 
@@ -45,7 +44,7 @@ export class CSVManager {
       }
 
       return _.map(row, (element: Value, index: number) => {
-        //TODO: based on the column name, activate the converter function
+        // Based on the column name, activate the converter function
         // that will update the value in that column name, in the given row.
         if (this.options.converters[headers[index]]) {
           const converted = this.options.converters[headers[index]](element);
@@ -89,10 +88,10 @@ export class CSVManager {
     return dataSet;
   }
 
-  private extractColumns(data: (string | number)[][], columnNames: string[]) {
+  private extractColumns(data: Value[][], columnNames: string[]) {
     const headers = _.first(data);
 
-    let extracted: (string | number)[][] = [];
+    let extracted: Value[][] = [];
 
     if (headers) {
       const indexes = _.map(columnNames, (column) => headers.indexOf(column));
