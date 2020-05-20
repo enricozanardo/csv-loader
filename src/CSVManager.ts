@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import _ from 'lodash';
 import shuffleSeed from 'shuffle-seed';
 
@@ -28,9 +29,10 @@ export class CSVManager {
   constructor(public filename: string, public options: Options) {}
 
   public loadCSV() {
-    const PATH_CSV = `${__dirname}`;
+    const LIBRARY_PATH = `${__dirname}`;
+    const HOME_PATH = path.join(`${LIBRARY_PATH}`, '../../../');
 
-    let loadedData = fs.readFileSync(`${PATH_CSV}/${this.filename}`, {
+    let loadedData = fs.readFileSync(`${HOME_PATH}/${this.filename}`, {
       encoding: 'utf-8',
     });
     let rawData = _.map(loadedData.split('\n'), (d) => d.split(','));
