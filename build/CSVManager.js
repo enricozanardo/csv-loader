@@ -15,7 +15,7 @@ class CSVManager {
     }
     loadCSV() {
         const LIBRARY_PATH = `${__dirname}`;
-        const HOME_PATH = path_1.default.join(`${LIBRARY_PATH}`, '../../../');
+        const HOME_PATH = path_1.default.join(`${LIBRARY_PATH}`, '../../..');
         let loadedData = fs_1.default.readFileSync(`${HOME_PATH}/${this.filename}`, {
             encoding: 'utf-8',
         });
