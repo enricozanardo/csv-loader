@@ -6,7 +6,8 @@
   "license": "MIT",
   "description": "Load and manage csv file for machine learning purposes",
   "scripts": {
-    "start": "tsc && node build/index.js",
+    "build": "tsc && node build/index.js",
+    "compile": "rimraf build && tsc",
     "watch-and-run": "ts-node-dev --respawn -- src/index.ts"
   },
   "keywords": [
