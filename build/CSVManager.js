@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CSVManager = void 0;
 const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
 const lodash_1 = __importDefault(require("lodash"));
 const shuffle_seed_1 = __importDefault(require("shuffle-seed"));
 class CSVManager {
@@ -13,8 +14,9 @@ class CSVManager {
         this.options = options;
     }
     loadCSV() {
-        const PATH_CSV = `${__dirname}`;
-        let loadedData = fs_1.default.readFileSync(`${PATH_CSV}/${this.filename}`, {
+        const LIBRARY_PATH = `${__dirname}`;
+        const HOME_PATH = path_1.default.join(`${LIBRARY_PATH}`, '../../../');
+        let loadedData = fs_1.default.readFileSync(`${HOME_PATH}/${this.filename}`, {
             encoding: 'utf-8',
         });
         let rawData = lodash_1.default.map(loadedData.split('\n'), (d) => d.split(','));
